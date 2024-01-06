@@ -1,0 +1,16 @@
+---
+import Heading from '@typography/Headings.svelte'; 
+
+const { title } = Astro.props;
+---
+
+<header>
+    <div class="container w-full mx-auto text-center">
+        <Heading>
+            <h1 class="py-4">{title}</h1>
+        </Heading>
+    </div>
+</header>
+
+<style lang="postcss">
+</style>

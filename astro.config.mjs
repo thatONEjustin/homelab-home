@@ -1,6 +1,10 @@
 import { defineConfig } from 'astro/config';
+import svelte from "@astrojs/svelte";
+
+import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-	outDir: '/var/www/html'
+  outDir: '/var/www/html',
+  integrations: [svelte(), tailwind()]
 });

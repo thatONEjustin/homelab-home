@@ -1,3 +1,21 @@
-h1 {
+/* Register your custom font family and tell the browser where to find it. */
+@font-face {
+  font-family: 'FiraCode';
+  src: url('./fonts/FiraCodeNerdFont-Regular.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* test typography */
+@layer base {
+  h1 {
     @apply text-6xl;
+  }
 }

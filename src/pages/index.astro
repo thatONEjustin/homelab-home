@@ -1,24 +1,19 @@
 ---
 import Layout from '@layouts/Layout.astro'
-import Bookmark from '@components/bookmark.astro'
+import Bookmark from '@components/Bookmark.astro'
 
 import { getCollection, getEntries } from 'astro:content'
 
 const title = "welcome to the smooth verse"
 
 const bookmarks_collection = await getCollection('bookmarks')
-
 const bookmarks = await getEntries(bookmarks_collection)
-
-console.log(bookmarks)
 ---
 
 <Layout {title}>
-<div>
-  <ul class="text-green">
-    {bookmarks.map(( item ) => {
-      <Bookmark {item} />
-    })}
+<div class="flex justify-center">
+  <ul class="text-green flex flex-row">
+    {bookmarks.map(item => <Bookmark {item} />)}
   </ul>
 </div>
 </Layout>

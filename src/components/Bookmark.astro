@@ -1,0 +1,11 @@
+---
+const { item } = Astro.props
+const { url:href, icon } = item.data
+const label = item.id
+---
+<li>
+  <a target="_blank" class="flex flex-col items-center justify-center max-w-fit mx-5" {href}>
+    <i class={`text-6xl nf ${icon}`}></i>
+    <h2 class="text-3xl mt-4">{label}</h2> 
+  </a>
+</li>

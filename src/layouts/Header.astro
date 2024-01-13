@@ -1,8 +1,17 @@
 ---
 const { title } = Astro.props;
+
+let menu = ['test']
 ---
 <header>
-  <div class="container w-full mx-auto mb-12 text-center">
+  <div class="container w-full mx-auto mb-12 text-center flex flex-col">
     <h1 class="py-4 text-yellow font-bold font-sans">{title}</h1>
+    <ul>
+      {menu.map(item => <li>
+        <a href={`${item}`}>
+          {item}
+        </a>
+      </li>)}
+    </ul>
   </div>
 </header>

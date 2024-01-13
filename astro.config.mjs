@@ -9,11 +9,11 @@ import node from "@astrojs/node";
 // https://astro.build/config
 export default defineConfig({
   prefetch: true,
-  outDir: '/var/www/html',
+  // outDir: "/var/www/html",
   integrations: [svelte(), tailwind({
     applyBaseStyles: false
   })],
-  output: "server",
+  output: "hybrid",
   adapter: node({
     mode: "standalone"
   })

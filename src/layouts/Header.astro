@@ -1,17 +1,14 @@
 ---
-const { title } = Astro.props;
-
-let menu = ['test']
+import type { MenuItem as MenuItemType } from '@js/data/menu'
+import MenuItem from '@components/MenuItem.astro'
+import { menu } from '@js/data/menu' 
+const { title } = Astro.props
 ---
 <header>
   <div class="container w-full mx-auto mb-12 text-center flex flex-col">
     <h1 class="py-4 text-yellow font-bold font-sans">{title}</h1>
     <ul>
-      {menu.map(item => <li>
-        <a href={`${item}`}>
-          {item}
-        </a>
-      </li>)}
+      {menu.map(( item:MenuItemType ) => <MenuItem {item} />)}
     </ul>
   </div>
 </header>

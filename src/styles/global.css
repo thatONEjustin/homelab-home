@@ -17,6 +17,9 @@
 
 /* test typography */
 @layer base {
+  body {
+    @apply text-pink;
+  }
   h1 {
     @apply text-6xl;
   }

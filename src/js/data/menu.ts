@@ -3,7 +3,7 @@ export interface MenuItem {
   url: string
 }
 
-export const menu: MenuItem[] = [
+export const menu_data: MenuItem[] = [
   {
     label: 'Home',
     url: '/'

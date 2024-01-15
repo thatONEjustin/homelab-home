@@ -1,0 +1,9 @@
+---
+import type { MenuItemType } from "@js/data/menu";
+import MenuItem from "./MenuItem.astro";
+
+const { items } = Astro.props
+---
+<ul>
+  {items.map(( item:MenuItemType ) => <MenuItem {item} />)}
+</ul>

@@ -6,6 +6,6 @@ import { getCollection, getEntries } from 'astro:content'
 const bookmarks_collection = await getCollection('bookmarks')
 const bookmarks = await getEntries(bookmarks_collection)
 ---
-<ul class="text-green flex flex-row">
+<ul class="flex flex-row text-cyan">
   {bookmarks.map(item => <Bookmark {item} />)}
 </ul>

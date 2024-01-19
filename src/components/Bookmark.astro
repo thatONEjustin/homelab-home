@@ -1,11 +1,37 @@
 ---
 const { item } = Astro.props
-const { url:href, icon } = item.data
+const { url:href, icon, color="" } = item.data
 const label = item.id
 ---
 <li>
-  <a target="_blank" class="flex flex-col items-center justify-center max-w-fit mx-5" {href}>
-    <i class={`text-6xl nf ${icon}`}></i>
-    <h2 class="text-3xl mt-4">{label}</h2> 
+  <a target="_blank" class={`flex flex-col items-center justify-center max-w-fit mx-5 ${color}`} {href}>
+    <i class={`text-6xl nf ${icon} ${color}`}></i>
+    <!-- <h2 class="text-3xl mt-4">{label}</h2>  -->
   </a>
 </li>
+
+<style>
+.yellow {
+  @apply text-yellow;
+}
+
+.purple {
+  @apply text-purple;
+}
+
+.red {
+  @apply text-red;
+}
+
+.cyan {
+  @apply text-cyan;
+}
+
+.green {
+  @apply text-green;
+}
+
+.white {
+  @apply text-white;
+}
+</style>

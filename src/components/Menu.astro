@@ -4,6 +4,6 @@ import MenuItem from "./MenuItem.astro";
 
 const { items } = Astro.props
 ---
-<ul>
+<ul class="flex flex-row mx-auto">
   {items.map(( item:MenuItemType ) => <MenuItem {item} />)}
 </ul>

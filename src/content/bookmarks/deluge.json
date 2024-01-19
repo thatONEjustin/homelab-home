@@ -1,4 +1,5 @@
 {
   "url": "http://other-box:8112",
-  "icon": "nf-fa-cloud_download text-cyan"
+  "icon": "nf-fa-cloud_download",
+  "color": "cyan"
 }

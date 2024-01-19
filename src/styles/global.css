@@ -11,7 +11,6 @@
       @apply bg-darker;
   }
   body {
-    @apply text-pink;
   }
   h1 {
     @apply text-6xl;

@@ -1,4 +1,5 @@
 {
   "url": "https://youtube.com/",
-  "icon": "nf-dev-github text-white"
+  "icon": "nf-dev-github",
+  "color": "white"
 }

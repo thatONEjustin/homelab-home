@@ -1,4 +1,6 @@
 {
   "url": "https://twitch.tv/",
-  "icon": "nf-fa-twitch text-purple"
+  "icon": "nf-fa-twitch",
+  "color": "purple",
+  "type": "media"
 }

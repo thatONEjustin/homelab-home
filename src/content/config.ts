@@ -5,6 +5,8 @@ const bookmarks = defineCollection({
   schema: z.object({
     url: z.string(),
     icon: z.string(),
+    color: z.string().optional(),
+    type: z.string().optional()
   }),
 });
 

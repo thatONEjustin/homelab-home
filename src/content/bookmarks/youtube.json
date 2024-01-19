@@ -1,4 +1,6 @@
 {
   "url": "https://youtube.com/",
-  "icon": "nf-fa-youtube text-red"
+  "type": "media",
+  "icon": "nf-fa-youtube",
+  "color": "red"
 }

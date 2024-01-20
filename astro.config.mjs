@@ -12,15 +12,11 @@ import alpinejs from "@astrojs/alpinejs";
 // https://astro.build/config
 export default defineConfig({
   output: "server",
-  adapter: node({
-    mode: "standalone"
-  }),
   prefetch: true,
   // outDir: "/var/www/html",
   integrations: [svelte(), tailwind({
     applyBaseStyles: false
   }), alpinejs()],
-  output: "hybrid",
   adapter: node({
     mode: "standalone"
   })

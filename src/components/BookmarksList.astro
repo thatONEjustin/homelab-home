@@ -3,11 +3,27 @@ import Bookmark from '@components/Bookmark.astro'
 
 import { getCollection, getEntries } from 'astro:content'
 
-const bookmarks_collection = await getCollection('bookmarks')
+const { searchParams } = Astro.url
+
+const filter = (searchParams.get('filter')) ? searchParams.get('filter') : 'all';
+ 
+//console.log(filter)
+const filter_bookmarks = ({ id }) => {
+  if(filter === 'all') {
+    return true
+  }
+
+  return id.split('/')[0] === filter
+}
+
+const bookmarks_collection = await getCollection('bookmarks', filter_bookmarks)
+//console.log(bookmarks_collection)
+
 const bookmarks = await getEntries(bookmarks_collection)
 
-// console.log(Astro.page.url)
+//console.log(bookmarks)
 ---
+
 <ul class="flex flex-row">
-  {bookmarks.map(item => <Bookmark {item} />)}
+  {bookmarks.map(item => <Bookmark transition:animate="fade" {item} />)}
 </ul>

@@ -1,12 +1,23 @@
 ---
+// import splt from 'spltjs'
+// import anime from 'animejs'
 const { item } = Astro.props
 const { url:href, icon, color="" } = item.data
-const label = item.id
+
+const clean_label = (str: string): string => {
+  return str.split('/')[1]
+}
+
+const label:string = clean_label( item.id )
+
+// splt({
+//   reveal: true
+// })
 ---
 <li>
-  <a target="_blank" class={`flex flex-col items-center justify-center max-w-fit mx-5 ${color}`} {href}>
+  <a target="_blank" class={`Bookmark flex flex-col items-center justify-center max-w-fit mx-5 ${color}`} {href}>
     <i class={`text-6xl nf ${icon} ${color}`}></i>
-    <!-- <h2 class="text-3xl mt-4">{label}</h2>  -->
+    <h2 class="text-3xl mt-4 splt">{label}</h2> 
   </a>
 </li>
 

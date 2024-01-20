@@ -7,6 +7,8 @@ import tailwind from "@astrojs/tailwind";
 
 import node from "@astrojs/node";
 
+import alpinejs from "@astrojs/alpinejs";
+
 // https://astro.build/config
 export default defineConfig({
   output: "server",
@@ -17,7 +19,7 @@ export default defineConfig({
   // outDir: "/var/www/html",
   integrations: [svelte(), tailwind({
     applyBaseStyles: false
-  })],
+  }), alpinejs()],
   output: "hybrid",
   adapter: node({
     mode: "standalone"

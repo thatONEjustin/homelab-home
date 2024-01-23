@@ -14,8 +14,8 @@ const label:string = clean_label( item.id )
 //   reveal: true
 // })
 ---
-<li>
-  <a target="_blank" class={`Bookmark flex flex-col items-center justify-center max-w-fit mx-5 ${color}`} {href}>
+<li class="flex flex-col items-center justify-center">
+  <a target="_blank" class={`Bookmark flex flex-col items-center justify-center max-w-fit ${color}`} {href}>
     <i class={`text-6xl nf ${icon} ${color}`}></i>
     <h2 class="text-3xl mt-4 splt">{label}</h2> 
   </a>

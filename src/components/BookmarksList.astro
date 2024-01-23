@@ -21,9 +21,9 @@ const bookmarks_collection = await getCollection('bookmarks', filter_bookmarks)
 
 const bookmarks = await getEntries(bookmarks_collection)
 
-//console.log(bookmarks)
+// console.log(bookmarks)
 ---
 
-<ul class="flex flex-row">
-  {bookmarks.map(item => <Bookmark transition:animate="fade" {item} />)}
+<ul class="grid grid-cols-3 gap-12 auto-rows-auto">
+  {bookmarks.map(item => <Bookmark transition:animate="slide" {item} />)}
 </ul>

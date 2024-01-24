@@ -1,12 +1,14 @@
 ---
 import Menu from "@components/Menu.astro";
 import { menu_data } from '@js/data/menu'
+
+const menu_items = menu_data
 const { title } = Astro.props
 ---
 <header>
   <div class="container w-full mx-auto mb-12 text-center flex flex-col">
     <h1 class="py-4 text-yellow font-bold font-sans">{title}</h1>
 
-    <Menu items={menu_data} />
+    <Menu items={menu_items} />
   </div>
 </header>

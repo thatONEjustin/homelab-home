@@ -1,41 +1,26 @@
 import { getCollection, getEntries } from "astro:content"
 
-export interface MenuItem {
-  label: string,
-  url: string
+export interface MenuItemType {
+  slug: string,
 }
 
 let main_menu = async () => {
   const bookmarks_collection = await getCollection('bookmarks')
   const bookmarks = await getEntries(bookmarks_collection)
 
-  let menu_items = bookmarks.map((item) => {
+  let slugs = bookmarks.map((item) => {
     let slug = item.id.split('/')[0]
-    return {
-      slug: slug
-    }
+    return slug
   })
 
-  console.log(menu_items)
+  slugs = ['all', ...new Set(slugs)]
 
-  return menu_items
+  return slugs.map((item_slug) => {
+    return {
+      label: item_slug,
+      url: `?filter=${item_slug}`
+    }
+  })
 }
 
-export const menu_data: MenuItem[] = [
-  {
-    label: 'All',
-    url: '/'
-  },
-  {
-    label: 'Social',
-    url: '?filter=social'
-  },
-  {
-    label: 'utilities',
-    url: '?filter=utils'
-  },
-  {
-    label: 'media',
-    url: '?filter=media'
-  },
-]
+export const menu_data = await main_menu().then(data => data)

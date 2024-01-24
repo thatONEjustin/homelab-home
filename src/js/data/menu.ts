@@ -8,12 +8,7 @@ let main_menu = async () => {
   const bookmarks_collection = await getCollection('bookmarks')
   const bookmarks = await getEntries(bookmarks_collection)
 
-  let slugs = bookmarks.map((item) => {
-    let slug = item.id.split('/')[0]
-    return slug
-  })
-
-  slugs = ['all', ...new Set(slugs)]
+  let slugs = ['all', ... new Set(bookmarks.map(({ id }) => id.split('/')[0]))]
 
   return slugs.map((item_slug) => {
     return {

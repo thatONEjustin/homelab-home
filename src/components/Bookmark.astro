@@ -1,11 +1,10 @@
 ---
 // import splt from 'spltjs'
-// import anime from 'animejs'
 const { item } = Astro.props
 const { url:href, icon, color="" } = item.data
 
 const clean_label = (str: string): string => {
-  return str.split('/')[1]
+  return str.split('/')[1].replaceAll('-', ' ')
 }
 
 const label:string = clean_label( item.id )

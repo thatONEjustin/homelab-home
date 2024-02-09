@@ -16,7 +16,7 @@ const filter_bookmarks = ({ id }) => {
 
 const bookmarks_collection = await getCollection('bookmarks', filter_bookmarks)
 const bookmarks = await getEntries(bookmarks_collection)
-
+// console.log(bookmarks)
 ---
 
 <ul class="grid grid-cols-6 gap-12 auto-rows-auto">

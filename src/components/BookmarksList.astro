@@ -5,7 +5,7 @@ import { getCollection, getEntries } from 'astro:content'
 
 const { searchParams } = Astro.url
 
-const filter = (searchParams.get('filter')) ? searchParams.get('filter') : 'all';
+const filter = (searchParams.get('filter')) ? searchParams.get('filter') : 'all'
 const filter_bookmarks = ({ id }) => {
   if(filter === 'all') {
     return true

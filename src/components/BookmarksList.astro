@@ -1,24 +1,33 @@
 ---
-import Bookmark from '@components/Bookmark.astro'
+import BookMark from '@components/Bookmark.astro'
+// import { type BookmarkData } from '@data/bookmarks'
+import { type Bookmark as BookmarkType } from '@data/bookmarks'
 
 import { getCollection, getEntries } from 'astro:content'
 
 const { searchParams } = Astro.url
 
 const filter = (searchParams.get('filter')) ? searchParams.get('filter') : 'all'
-const filter_bookmarks = ({ id }) => {
-  if(filter === 'all') {
+
+// HACK: works with the **as any** type assertion in the getCollection call
+const filter_bookmarks = (bookmark: BookmarkType) => {
+  const { ignore_all } = bookmark.data
+
+  if(filter === 'all' && !ignore_all) {
     return true
   }
 
-  return id.split('/')[0] === filter
+  return bookmark.id.split('/')[0] === filter
 }
 
-const bookmarks_collection = await getCollection('bookmarks', filter_bookmarks)
+// TODO: solve "No overload matches this call"
+// HACK: adding "as any" kind of removes the purpose of typescript
+// const bookmarks_collection = await getCollection("bookmarks", filter_bookmarks)
+const bookmarks_collection = await getCollection("bookmarks", filter_bookmarks as any)
+
 const bookmarks = await getEntries(bookmarks_collection)
-// console.log(bookmarks)
 ---
 
-<ul class="grid grid-cols-6 gap-12 auto-rows-auto">
-  {bookmarks.map(item => <Bookmark transition:animate="slide" {item} />)}
+<ul class="grid grid-cols-3 md:grid-cols-4 xl:grid-cols-6 gap-12 auto-rows-auto">
+  {bookmarks.map(item => <BookMark transition:animate="slide" {item} />)}
 </ul>

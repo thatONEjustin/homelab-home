@@ -6,7 +6,8 @@ const bookmarks = defineCollection({
     url: z.string(),
     icon: z.string(),
     color: z.string().optional(),
-    type: z.string().optional()
+    type: z.string().optional(),
+    ignore_all: z.boolean().default(false).optional()
   }),
 });
 

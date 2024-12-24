@@ -20,6 +20,5 @@ let main_menu = async () => {
 };
 
 export const menu_data = await main_menu().then((data) => {
-  console.log(data);
   return data;
 });

@@ -1,14 +1,12 @@
 ---
 const { url, label } = Astro.props.item
-// console.log(`MenuItem active: ${active}`)
 
 const { searchParams } = Astro.url
 
 const filter = (searchParams.get('filter')) ? searchParams.get('filter') : 'all'
-const get_active = (slug:string) => slug == filter
 ---
 <li>
-  <a href={url} class={get_active(label) ? 'active' : ''}>
+  <a href={url} class:list={[(label == filter) ? 'active' : '']}>
     {label}
   </a>
 </li>

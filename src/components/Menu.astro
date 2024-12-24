@@ -3,6 +3,7 @@ import type { MenuItemType } from "@js/data/menu"
 import MenuItem from "./MenuItem.astro"
 
 const { items } = Astro.props
+
 ---
 <ul class="flex flex-row mx-auto">
   {items.map(( item:MenuItemType ) => <MenuItem {item} />)}

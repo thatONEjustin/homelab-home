@@ -1,28 +1,40 @@
 ---
 const { url, label } = Astro.props.item
+// console.log(`MenuItem active: ${active}`)
+
+const { searchParams } = Astro.url
+
+const filter = (searchParams.get('filter')) ? searchParams.get('filter') : 'all'
+const get_active = (slug:string) => slug == filter
 ---
 <li>
-  <a href={url}>
+  <a href={url} class={get_active(label) ? 'active' : ''}>
     {label}
   </a>
 </li>
 
 <style lang="postcss">
 li {
-  @apply mr-4 last:mr-0;
+  @apply mx-3 block relative;
 }
 
 li a {
-  @apply lowercase text-purple-500 relative text-2xl;
+  @apply lowercase text-purple-500 relative text-2xl text-center block px-3;
 }
 
 li a::after {
-  @apply absolute origin-center -bottom-1 left-1/2 transition-all -translate-x-1/2 h-[1px] w-0;
+  @apply absolute origin-center -bottom-1 h-[2px] w-0;
+  @apply left-1/2 -translate-x-1/2;
+  @apply transition-all;
   @apply bg-pink;
-  content: ' ';
+  content: '';
 }
 
-li a:hover::after {
+li a.active, li a:hover {
+  @apply text-pink;
+}
+
+li a:hover::after, li a.active::after {
   @apply w-full;
 }
 </style>

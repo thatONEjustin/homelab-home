@@ -1,6 +1,6 @@
 {
-  "url": "https://craftcms.com",
-  "icon": "nf-md-alpha_c_box",
-  "color": "orange"
+    "url": "https://craftcms.com",
+    "icon": "nf-md-alpha_c_box",
+    "color": "orange",
+    "ignore_all": true
 }
-

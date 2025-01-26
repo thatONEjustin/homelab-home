@@ -1,6 +1,5 @@
 {
-  "url": "https://astro.build/",
-  "icon": "nf-oct-rocket",
-  "color": "pink"
+    "url": "https://astro.build/",
+    "icon": "nf-dev-astro",
+    "color": "pink"
 }
-

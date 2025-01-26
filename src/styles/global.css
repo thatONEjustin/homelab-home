@@ -10,8 +10,6 @@
   html {
       @apply bg-darker;
   }
-  body {
-  }
   h1 {
     @apply text-6xl;
   }

@@ -1,5 +1,6 @@
 {
-  "url": "https://facebook.com/",
-  "icon": "nf-fa-facebook_official",
-  "color": "cyan"
+    "url": "https://facebook.com/",
+    "icon": "nf-fa-facebook_official",
+    "color": "cyan",
+    "ignore_all": true
 }

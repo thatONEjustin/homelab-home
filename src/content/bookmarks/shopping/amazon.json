@@ -1,5 +1,6 @@
 {
-  "url": "https://amazon.com/",
-  "icon": "nf-fa-amazon",
-  "color": "yellow"
+    "url": "https://amazon.com/",
+    "icon": "nf-fa-amazon",
+    "color": "yellow",
+    "ignore_all": true
 }

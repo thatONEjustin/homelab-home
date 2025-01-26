@@ -4,6 +4,8 @@ import { ViewTransitions } from 'astro:transitions';
 import Header from '@layouts/Header.astro';
 import '@styles/global.css'
 
+import favicon from '@img/favicon.ico';
+
 const { title } = Astro.props;
 ---
 <!DOCTYPE html>
@@ -12,16 +14,17 @@ const { title } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description">
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="icon" type="image/svg+xml" href={favicon} />
 		<meta name="generator" content={Astro.generator} />
 
 		<title>{title}</title>
-    <ViewTransitions />
+        <ViewTransitions />
 	</head>
+
 	<body>
-    <Header {title} />
-    <main transition:animate="slide">
-      <slot />
-    </main>
+        <Header {title} />
+        <main transition:animate="slide">
+            <slot />
+        </main>
 	</body>
 </html>

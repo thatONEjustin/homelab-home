@@ -1,5 +1,6 @@
 {
-  "url": "https://microcenter.com/",
-  "icon": "nf-cod-chip",
-  "color": "white"
+    "url": "https://microcenter.com/",
+    "icon": "nf-cod-chip",
+    "color": "white",
+    "ignore_all": true
 }

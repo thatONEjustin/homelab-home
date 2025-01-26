@@ -1,5 +1,6 @@
 {
-  "url": "https://novelkeys.com/",
-  "icon": "nf-md-alpha_n_box",
-  "color": "white"
+    "url": "https://novelkeys.com/",
+    "icon": "nf-md-alpha_n_box",
+    "color": "white",
+    "ignore_all": true
 }
